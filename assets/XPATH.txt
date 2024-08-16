@@ -1,0 +1,37 @@
+Learned about XPATH, what is it and why it is used?
+
+XPath Overview
+XPath (XML Path Language) is a query language used for selecting nodes from XML documents. 
+It provides a way to navigate through elements and attributes in an XML document using a path-like syntax.
+
+Why XPath is Used ?
+Navigation: XPath allows you to navigate through XML documents and select nodes or sets of nodes based on various criteria.
+Querying: It enables filtering and querying XML data to find specific information.
+Data Extraction: XPath is often used in conjunction with XSLT and other technologies to extract and transform XML data.
+
+This is a playground where you can have some hands on experience: 
+https://scrapinghub.github.io/xpath-playground/
+
+Example:
+
+<library>
+  <book id="1">
+    <title>Python Programming</title>
+    <author>John Doe</author>
+  </book>
+  <book id="2">
+    <title>XML Basics</title>
+    <author>Jane Smith</author>
+  </book>
+</library>
+
+
+Select All Book Titles:
+/library/book/title
+
+Select the Author of the First Book:
+/library/book[1]/author
+
+Select Books with a Specific ID:
+/library/book[@id='1']
+
