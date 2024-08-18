@@ -9,6 +9,9 @@ This script automates the task of opening a webpage using Selenium WebDriver wit
 1. Import necessary modules.
 2. Set the URL and ChromeDriver path.
 3. Initialize the WebDriver and open the specified webpage.
+4. Locate containers for news articles using XPath.
+5. Extract the title, subtitle, and link from each container.
+6. Optionally, print or store the extracted data.
 
 Ensure `chromedriver.exe` is compatible with your Chrome version and correctly referenced in the path.
 """
