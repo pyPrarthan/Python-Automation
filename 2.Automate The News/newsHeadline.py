@@ -1,3 +1,22 @@
+"""
+This script automates the task of opening a webpage using Selenium WebDriver with Google Chrome.
+
+## Components:
+- **Website URL**: The URL to be opened (`https://www.thesun.co.uk/sport/football/`).
+- **ChromeDriver Path**: Path to the `chromedriver.exe` file used to control the Chrome browser.
+
+## Flow:
+1. Import necessary modules.
+2. Set the URL and ChromeDriver path.
+3. Initialize the WebDriver and open the specified webpage.
+4. Locate containers for news articles using XPath.
+5. Extract the title, subtitle, and link from each container.
+6. Optionally, print or store the extracted data.
+
+Ensure `chromedriver.exe` is compatible with your Chrome version and correctly referenced in the path.
+"""
+### USED CHATGPT FOR SOME LOGIC
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
