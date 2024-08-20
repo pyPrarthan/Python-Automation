@@ -19,6 +19,7 @@ Ensure `chromedriver.exe` is compatible with your Chrome version and correctly r
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -28,14 +29,20 @@ import os
 website = "https://www.thesun.co.uk/sport/football/"
 path = r"C:\Users\anujc\Desktop\chromedriver-win64 (1)\chromedriver-win64\chromedriver.exe"
 
+# Correct way to set headless mode
+options = Options()
+options.add_argument("--headless")  # instead of options.headless = True
+options.add_argument("--disable-gpu")  # recommended for headless mode
+
+
 service = Service(executable_path=path)
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service, options=options)
 
 try:
     driver.get(website)
     
     # Explicit wait to ensure elements are loaded
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 20)
     containers = wait.until(EC.presence_of_all_elements_located((By.XPATH, '//div[@class="teaser__copy-container"]')))
     
     titles = []
@@ -59,7 +66,7 @@ try:
 
     print("Current Working Directory:", os.getcwd())
     print("Saving to CSV...")
-    df_headline.to_csv('headline.csv', index=False)
+    df_headline.to_csv('headlineTwo.csv', index=False)
     print("CSV file saved.")
     
 finally:
