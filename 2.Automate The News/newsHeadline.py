@@ -24,7 +24,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
+
+from datetime import datetime
 import os
+import sys
+
+application_path = os.path.dirname(sys.executable)
+
+now = datetime.now()
+#Using MMDDYY
+month_day_year = now.strftime("%m%d%Y")
 
 website = "https://www.thesun.co.uk/sport/football/"
 path = r"C:\Users\anujc\Desktop\chromedriver-win64 (1)\chromedriver-win64\chromedriver.exe"
@@ -66,7 +75,13 @@ try:
 
     print("Current Working Directory:", os.getcwd())
     print("Saving to CSV...")
-    df_headline.to_csv('headlineTwo.csv', index=False)
+
+    file_name = f'headline-{month_day_year}.csv'
+
+    final_path = os.path.join(application_path,file_name)
+
+    df_headline.to_csv(final_path, index=False)
+
     print("CSV file saved.")
     
 finally:
