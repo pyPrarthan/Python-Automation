@@ -1,7 +1,7 @@
 import pywhatkit as pywhatkit
 
 #Contact
-phone_number = "+16478797231"  # Replace with a valid phone number including country code
+phone_number = "+1234567890"  # Replace with a valid phone number including country code
 message = "Hello from pywhatkit!"
 hour = 14
 minute = 21
